@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #121212;
+            color: white;
+        }
+
+        body {
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            --s: 37px;
+            /* control the size */
+
+            --c: #0000, #282828 0.5deg 119.5deg, #0000 120deg;
+            --g1: conic-gradient(from 60deg at 56.25% calc(425% / 6), var(--c));
+            --g2: conic-gradient(from 180deg at 43.75% calc(425% / 6), var(--c));
+            --g3: conic-gradient(from -60deg at 50% calc(175% / 12), var(--c));
+            background: var(--g1), var(--g1) var(--s) calc(1.73 * var(--s)), var(--g2),
+                var(--g2) var(--s) calc(1.73 * var(--s)), var(--g3) var(--s) 0,
+                var(--g3) 0 calc(1.73 * var(--s)) #1e1e1e;
+            background-size: calc(2 * var(--s)) calc(3.46 * var(--s));
+        }
+
+        .content {
+            margin-top: 10px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar a {
+            margin: 5px;
+            padding: 0.8em 2em 0.8em 2.5em;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 15px;
+            color: #f6fff6;
+            letter-spacing: 0.3em;
+            text-shadow: -2px 2px 5px #b734dc;
+            background-color: transparent;
+            border: 2px solid #e17bfe;
+            box-shadow: 0 0 0px 1px #d952fe,
+                0 0 10px 2px #b734dc,
+                inset 0 0 0px 1px #d952fe,
+                inset 0 0 10px 2px #b734dc;
+            transition: 100ms;
+        }
+
+        .navbar a:hover {
+            box-shadow: 0 0 0px 1px #d952fe,
+                0 0 10px 2px #b734dc,
+                inset 0 0 0px 1px #d952fe,
+                inset 0 0 30px 2px #b734dc;
+            text-shadow: 0 0 10px #b734dc;
+            transform: translateY(-5px);
+        }
+
+        .navbar {
+            width: 100%;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            top: 0;
+        }
+
+        a,
+        button {
+            padding: 0.8em 2em 0.8em 2.5em;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 15px;
+            color: #f6fff6;
+            letter-spacing: 0.3em;
+            text-shadow: -2px 2px 5px #33fd30;
+            background-color: transparent;
+            border: 2px solid #bbfeb1;
+            box-shadow: 0 0 0px 1px #42f112,
+                0 0 10px 2px #33fd30,
+                inset 0 0 0px 1px #42f112,
+                inset 0 0 10px 2px #33fd30;
+            transition: 100ms;
+        }
+
+        a,
+        button:hover {
+            box-shadow: 0 0 0px 1px #42f112,
+                0 0 10px 2px #33fd30,
+                inset 0 0 0px 1px #42f112,
+                inset 0 0 30px 2px #33fd30;
+            text-shadow: 0 0 10px #33fd30;
+            transform: translateY(-5px);
+        }
+
+        .tag-button {
+            background-color: #39ff14;
+            color: #121212;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .tag-button:hover {
+            background-color: #32cc12;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="https://rydrweb.github.io/hidden">Hide This Tab</a>
+        <a href="https://rydrweb.github.io/notes">Patch Notes</a>
+        <a href="https://rydrweb.github.io/account">Account</a>
+        <a href="https://rydrweb.github.io/suggest">Suggest</a>
+    </div>
+    <h1 style="margin-top: 100px;">Shop</h1>
+    <a href="https://rydrweb.github.io" style="margin-top: 10px; margin-bottom: 10px;">Back</a>
+    <h2>Tags</h2>
+    <p>Apply these to your account!</p>
+    <div id="tags-container">
+        <button class="tag-button" onclick="selectTag('Chill Guy')">Chill Guy</button>
+        <button class="tag-button" onclick="selectTag('Gamer')">Gamer</button>
+        <button class="tag-button" onclick="selectTag('playedrydrweb')">I've played rydrweb before!</button>
+        <button class="tag-button" onclick="selectTag('Spotify')">Spotify</button>
+        <button class="tag-button" onclick="selectTag('Alex')">Alex</button>
+        <button class="tag-button" onclick="selectTag('bambu')">bambu</button>
+        <button class="tag-button" onclick="selectTag('rydr')">rydr</button>
+        <button class="tag-button" onclick="selectTag('rydr')">Chuming was here</button>
+    </div>
+    <p>If you want a custom tag just email me through Suggest!</p>
+    <h2 style="margin-top: 25px;">Themes</h2>
+    <p>This is really complicated so im not going to do this right now.</p>
+    <script>
+        // Function to handle tag selection
+        function selectTag(tag) {
+            // Save the selected tag to local storage
+            let selectedTags = JSON.parse(localStorage.getItem('selectedTags')) || [];
+            if (!selectedTags.includes(tag)) {
+                selectedTags.push(tag);
+                localStorage.setItem('selectedTags', JSON.stringify(selectedTags));
+            }
+
+            // Hide the button
+            document.querySelector(`button[onclick="selectTag('${tag}')"]`).style.display = 'none';
+        }
+
+        // Function to check and hide already selected tags on page load
+        function checkSelectedTags() {
+            let selectedTags = JSON.parse(localStorage.getItem('selectedTags')) || [];
+            selectedTags.forEach(tag => {
+                let button = document.querySelector(`button[onclick="selectTag('${tag}')"]`);
+                if (button) {
+                    button.style.display = 'none';
+                }
+            });
+        }
+
+        // Check selected tags on page load
+        window.onload = checkSelectedTags;
+    </script>
+</body>
+
+</html>
